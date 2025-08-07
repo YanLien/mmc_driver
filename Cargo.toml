@@ -1,0 +1,25 @@
+[package]
+name = "mmc_driver"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+log = "0.4"
+
+[features]
+default = []
+dma = []
+pio = []
+poll = []
+irq = []
+
+[dev-dependencies]
+bare-test = "0.5"
+byte-unit = { version = "5.1.6", default-features = false, features = ["byte"] }
+
+[build-dependencies]
+bare-test-macros = "0.2"
+
+[[test]]
+name = "test"
+harness = false
