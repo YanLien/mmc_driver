@@ -5,6 +5,9 @@ edition = "2024"
 
 [dependencies]
 log = "0.4"
+spin = "0.10.0"
+heapless = "0.8.0"
+tock-registers = "0.10.0"
 
 [features]
 default = []
@@ -16,6 +19,7 @@ irq = []
 [dev-dependencies]
 bare-test = "0.5"
 byte-unit = { version = "5.1.6", default-features = false, features = ["byte"] }
+rk3568_clk = { git = "https://github.com/arceos-hypervisor/rk3568_clk.git" }
 
 [build-dependencies]
 bare-test-macros = "0.2"

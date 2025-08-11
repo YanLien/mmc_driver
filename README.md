@@ -57,4 +57,6 @@ Compile and flash the test:
 cargo test --release --test test -- --show-output --uboot
 ```
 
+
+
 The system will automatically use the above configuration to test via serial connection. Ensure the device is connected and permissions allow access to `/dev/ttyUSB0`.

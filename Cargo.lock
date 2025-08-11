@@ -319,6 +319,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
 
 [[package]]
+name = "crate_interface"
+version = "0.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "70272a03a2cef15589bac05d3d15c023752f5f8f2da8be977d983a9d9e6250fb"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "crc32fast"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -955,6 +966,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "kernel_guard"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "307e6be468f3d6b6d895e191f63c11602e4e76575ecca68325d8c8dbebe2870e"
+dependencies = [
+ "cfg-if",
+ "crate_interface",
+]
+
+[[package]]
+name = "kspin"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3d841fd3aeaa9a55871068f5c3ce48497a6dbcf14e20ca7784a9f68bfdb4c825"
+dependencies = [
+ "cfg-if",
+ "kernel_guard",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1053,7 +1084,11 @@ dependencies = [
  "bare-test",
  "bare-test-macros",
  "byte-unit",
+ "heapless",
  "log",
+ "rk3568_clk",
+ "spin 0.10.0",
+ "tock-registers 0.10.0",
 ]
 
 [[package]]
@@ -1579,6 +1614,18 @@ dependencies = [
  "libc",
  "untrusted",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "rk3568_clk"
+version = "0.1.0"
+source = "git+https://github.com/arceos-hypervisor/rk3568_clk.git#2b63818f9f9f576d99988fafa70de41112524e00"
+dependencies = [
+ "aarch64-cpu",
+ "bare-test-macros",
+ "fdt-parser",
+ "kspin",
+ "log",
 ]
 
 [[package]]
